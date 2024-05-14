@@ -1,5 +1,12 @@
+$(document).ready(function() {
+    $('#icons').select2({
+        placeholder: "Select icons",
+        allowClear: true
+    });
+});
+
 function generateLink() {
-    const icons = document.getElementById('icons').value.trim().replace(/\s+/g, '');
+    const icons = $('#icons').val().join(',');
     const theme = document.getElementById('theme').value;
     const perline = document.getElementById('perline').value;
     const alignment = document.getElementById('alignment').value;
