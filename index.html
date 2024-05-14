@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Icons Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Skill Icons Generator</h1>
+        <form id="iconForm">
+            <div class="form-group">
+                <label for="icons">Enter Icons (comma separated):</label>
+                <input type="text" id="icons" placeholder="e.g., js,html,css,wasm">
+            </div>
+            <div class="form-group">
+                <label for="theme">Select Theme:</label>
+                <select id="theme">
+                    <option value="">Default</option>
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="perline">Icons Per Line:</label>
+                <input type="number" id="perline" min="1" placeholder="e.g., 3">
+            </div>
+            <div class="form-group">
+                <label for="alignment">Align Icons:</label>
+                <select id="alignment">
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                </select>
+            </div>
+            <button type="button" onclick="generateLink()">Generate Link</button>
+        </form>
+        <div class="result">
+            <h2>Generated Link:</h2>
+            <textarea id="resultLink" readonly></textarea>
+            <h2>Preview:</h2>
+            <div id="preview"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
