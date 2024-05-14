@@ -6,12 +6,18 @@ $(document).ready(function() {
 });
 
 function generateLink() {
-    const icons = $('#icons').val().join(',');
+    const icons = $('#icons').val();
+    if (!icons || icons.length === 0) {
+        alert("Please select at least one icon.");
+        return;
+    }
+
+    const iconString = icons.join(',');
     const theme = document.getElementById('theme').value;
     const perline = document.getElementById('perline').value;
     const alignment = document.getElementById('alignment').value;
 
-    let url = `https://skillicons.dev/icons?i=${icons}`;
+    let url = `https://skillicons.dev/icons?i=${iconString}`;
     if (theme) {
         url += `&theme=${theme}`;
     }
